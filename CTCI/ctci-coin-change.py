@@ -15,11 +15,13 @@ def change_help(coins, num_coins, target):
 
     for j in range(1,target+1):
         for k in range(num_coins):
+            #new solutions including use of this new coin basically as a part of all before
             if j - coins[k] >= 0:
                 x = table[j - coins[k]][k]
             else:
                 x = 0
 
+            # This is for solutions for this amount without using the coin
             if k >= 1:
                 y = table[j][k-1]
             else:
